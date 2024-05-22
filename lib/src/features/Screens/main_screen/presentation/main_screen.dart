@@ -27,11 +27,10 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           Column(
             children: [
-              Text("Counter wird immer um 2 erhöht"),
+              const Text("Counter wird immer um 2 erhöht"),
               OutlinedButton(
                 onPressed: () {
                   setState(() {
-                    print("Counter wird um 2 erhöht");
                     counter += 2;
                     print(
                         "Counter wurde um 2 erhöht und steht jetzt bei $counter");
@@ -39,12 +38,11 @@ class _MainScreenState extends State<MainScreen> {
                 },
                 child: Text("counter is $counter"),
               ),
-              Text("Counter wird immer um 1 verringert"),
+              const Text("Counter wird immer um 1 verringert"),
               OutlinedButton(
                 onPressed: () {
                   setState(() {
-                    print("Counter wird um 1 verringert");
-                    counter -= 1;
+                    counter--;
                     print(
                         "Counter wurde um 1 verringert und steht jetzt bei $counter");
                   });
@@ -59,6 +57,8 @@ class _MainScreenState extends State<MainScreen> {
   }
 }
 
-dispose() {
-  print("Dispose function startet");
+@override
+void dispose() {
+  print("dispose ran");
+  dispose();
 }
