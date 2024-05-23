@@ -8,7 +8,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class MainScreenState extends State<MainScreen> {
-  int _counter = 0;
+  int counter = 0;
 
   @override
   void initState() {
@@ -16,15 +16,9 @@ class MainScreenState extends State<MainScreen> {
     debugPrint('initState() wurde aufgerufen.');
   }
 
-  @override
-  void dispose() {
-    debugPrint('dispose() wurde aufgerufen.');
-    super.dispose();
-  }
-
   void _incrementCounter() {
     setState(() {
-      _counter += 2;
+      counter += 2;
     });
   }
 
@@ -40,7 +34,7 @@ class MainScreenState extends State<MainScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Zahl: $_counter',
+              'Zahl: $counter',
               style: const TextStyle(fontSize: 24),
             ),
             const SizedBox(height: 20),
@@ -53,5 +47,11 @@ class MainScreenState extends State<MainScreen> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    debugPrint('dispose() wurde aufgerufen.');
+    super.dispose();
   }
 }
